@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Maria</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe6fa);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('imagen2.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      opacity: 0.35;
+      z-index: -1;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .message {
+      flex: 1;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      white-space: pre-line;
+      font-size: 1.15em;
+      line-height: 1.6;
+    }
+
+    .audio {
+      margin-top: 30px;
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    audio {
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="photo">
+      <img src="imagen.jpeg" alt="Maria e companhia">
+    </div>
+    <div class="message">
+      <strong>Maria ❤️</strong>
+
+      Feita de borboletas  
+      e fotografias  
+      conselhos  
+      e amor feminino
+
+      é cuidado, ternura  
+      feita de gente  
+      que preenche o peito
+    </div>
+  </div>
+
+  <div class="audio">
+    <audio id="musica" controls autoplay loop>
+      <source src="o-seu-nome.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio HTML5.
+    </audio>
+
+    <script>
+      const audio = document.getElementById('musica');
+      audio.addEventListener('loadedmetadata', function () {
+        audio.currentTime = 0; // empieza desde el inicio
+      });
+    </script>
+  </div>
+
+</body>
+</html>
